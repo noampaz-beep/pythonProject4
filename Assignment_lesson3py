@@ -1,0 +1,80 @@
+# 1. Write the following code: a = 1/0;
+#
+# 2. Build a corresponding try-except block to
+# avoid exception.
+
+from PIL import Image
+import io
+
+try:
+    a = 1 / 0
+except ZeroDivisionError as e:
+    print(e.args)
+    print("could not divide by zero something went wrong")
+
+# 3. Is the following code legal?
+#
+# try :
+# x = 1
+# finally :
+# print(“finally”)
+
+#  yes
+
+
+# 4. What exception types can be caught by the
+# following handler?
+# Except:
+
+# all the kinds of exceptions
+
+
+# 5. What is wrong with using the above type of
+# exception handler? it is to general
+
+
+# 6. What exceptions can be caught by the
+# following handlers?
+# ...
+# except IOError - Input/Output error
+# ...
+# except ZeroDivisionError -- division by zero
+
+# 7. Create a text file named “words.txt”
+# programmatically
+# 8. Write your name into the file
+#
+# 9. Read your file content and print it
+#
+# 10. Write Hebrew content into your text file and
+# print its content programmatically.
+
+my_file = open("words.txt", "w")
+
+
+def getName():
+    current_name = input("enter your name: ")
+    with open('words.txt', 'w', encoding='utf-8') as f:
+        f.write(current_name)
+    f.close()
+
+
+def printFile():
+    with io.open("words.txt", 'r', encoding='utf8') as f:
+        text = f.read()
+        print(f"name is {text}")
+
+
+getName()
+printFile()
+
+# Challenge:
+# 11. Create an image from code (png file) Hint:
+# use Pillow
+
+
+img = Image.new('RGBA', (100, 100), (255, 0, 0, 0))
+
+rgba = img.convert("RGBA")
+
+rgba.save("transparent_image2.png", "PNG")

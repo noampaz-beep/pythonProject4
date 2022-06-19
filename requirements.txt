@@ -1,0 +1,8 @@
+requests~=2.27.1
+awscli
+flask~=2.1.2
+
+
+# pip install -r requirements.txt
+Pillow~=9.1.0
+selenium~=4.2.0
